@@ -1,0 +1,12 @@
+cmd create cchat Clear the Chat!
+cmd edit cchat 1 let %ac% = array(\"Owner\", \"Admin\", \"Developer\")
+cmd edit cchat 2 let %pgrp% = playergroup(%p%)
+cmd edit cchat 3 if %pgrp% in %ac% then goto
+cmd edit cchat 4 message %p% §cYou do not have permission to run this command.
+cmd edit cchat 5 exit
+cmd edit cchat 6 let %cchat% = 100 
+cmd edit cchat 7 message onlineplayers() 
+cmd edit cchat 8 let %cchat% = %cchat% - 1 
+cmd edit cchat 9 if %cchat% > -1 then goto 7 
+cmd edit cchat 10 message onlineplayers() §6The Chat has been cleared by §d%p%§6. 
+cmd edit cchat 11 exit

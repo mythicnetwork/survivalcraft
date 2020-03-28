@@ -1,0 +1,11 @@
+cmd create v §r§6§l» §r§dShows server patch & version
+cmd edit v 1 %player% = %p%
+cmd edit v 2 %gui%[\"type\"] = \"form\"
+cmd edit v 3 %gui%[\"title\"] = \"§6§lSC » §dVersion\"
+cmd edit v 4 %gui%[\"content\"] = \"§6§l» §r§dShowing Information about Server:\\n§r\\n§6§lRunning §dPocketMine-MP §6» §r§6v§c3.11.6 §6based on §d1.14-1.14.41§6.\\n§r\\n§6§lRunning patch » §r§dv§4§l0.1.0§r §6based on §d§lMythic §r§6Core ported for §b§lS§cC§r §l» §r§dMTH-1.2.0.\"
+cmd edit v 5 %button0%[\"text\"] = \"§4§l» §r§6Exit\"
+cmd edit v 6 %buttons%[] = %button0%
+cmd edit v 7 %gui%[\"buttons\"] = %buttons%
+cmd edit v 8 %response% = dialog(%player%, %gui%)
+cmd edit v 9 if %response% = 0 then exit
+cmd edit v 10 exit

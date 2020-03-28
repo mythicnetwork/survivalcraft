@@ -1,0 +1,5 @@
+cmd create chud Custom HUD handler
+cmd unregister chud
+cmd edit chud 1 ascon /sb §6§l§k||§r §b§lSurvival§cCraft §r§6§l§k||§r%LINE%§6§l§k||§r §dWelcome, §b%NICK%§d!, Your Rank is §c%PP_GROUP%§d. §6§l§k||§r%LINE%§6§l§k||§r §dOnline: §e%ONLINE% §d/ §e%MAX_ONLINE%§d, Balance: §c%MONEY% §6§l§k||§r
+cmd edit chud 2 message onlineplayers() §6Custom HUD synchronized.
+cmd edit chud 3 exit

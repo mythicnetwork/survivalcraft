@@ -1,0 +1,88 @@
+cmd create core §r§6§l» §r§dMythic Core
+cmd trigger startup core
+cmd unregister core
+cmd add core let %player% = %p%
+cmd add core if %p% = \"CONSOLE\" then goto 9
+cmd add core let %option% = %args%[1]
+cmd add core if %option% = \"\" then message %p% §6Please try one of these options §d» §r§l§ostart§r, §l§oshut§r, §l§oinfo§r.
+cmd add core if %option% = \"start\" then goto 9
+cmd add core if %option% = \"info\" then message %p% §dMythic §6Core Info §d» §6version §cMTH-§d1.2.0§6. §6Services bundled within its §dcode§6. §6MTH §dPackage §6coded by §dNikosProGamer§6.
+cmd add core if %option% = \"shut\" then asop /cmd run shutcore
+cmd add core exit
+cmd add core %current-time% = %time%
+cmd add core message onlineplayers() SC | The Mythic Core is initializing start up.
+cmd add core let %discord_message% = \"**```SC | The Mythic Core is initializing start up.```**\"
+cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add core sleep 1
+cmd add core message onlineplayers() SC | The Mythic Core is now loading services.
+cmd add core let %discord_message% = \"**```SC | The Mythic Core is now loading services.```**\"
+cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add core message onlineplayers() Mythic Core SC | Loading Crate Manager Service.
+cmd add core let %discord_message% = \"**```Mythic Core SC | Loading Crate Manager Service.```**\"
+cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add core ascon /cmd run cratemngr
+cmd add core message onlineplayers() Mythic Core SC | Loaded Crate Manager Service.
+cmd add core let %discord_message% = \"**```Mythic Core SC | Loaded Crate Manager Service.```**\"
+cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add core message onlineplayers() Mythic Core SC | Loading Bossbar system Service.
+cmd add core let %discord_message% = \"**```Mythic Core SC | Loading Bossbar system Service.```**\"
+cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add core ascon boss create logo
+cmd add core message onlineplayers() Mythic Core SC | Loaded Bossbar system Service.
+cmd add core let %discord_message% = \"**```Mythic Core SC | Loaded Bossbar system Service.```**\"
+cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add core message onlineplayers() Mythic Core SC | Loading Discord-based report Service.
+cmd add core let %discord_message% = \"**```Mythic Core SC | Loading Discord-based report Service.```**\"
+cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add core ascon /cmd run dsr
+cmd add core message onlineplayers() Mythic Core SC | Loaded Discord-based report Service.
+cmd add core let %discord_message% = \"**```Mythic Core SC | Loaded Discord-based report Service.```**\"
+cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add core message onlineplayers() Mythic Core SC | Loading ClearLagg system Service.
+cmd add core let %discord_message% = \"**```Mythic Core SC | Loading ClearLagg system Service.```**\"
+cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add core ascon /cmd run cl
+cmd add core message onlineplayers() Mythic Core SC | Loaded ClearLagg system Service.
+cmd add core let %discord_message% = \"**```Mythic Core SC | Loaded ClearLagg system Service.```**\"
+cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add core message onlineplayers() Mythic Core SC | Loading Join & Leave Messages system Service.
+cmd add core let %discord_message% = \"**```Mythic Core SC | Loading Join & Leave Messages system Service.```**\"
+cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add core ascon /cmd run jm
+cmd add core ascon /cmd run lm
+cmd add core message onlineplayers() Mythic Core SC | Loaded Join & Leave Messages system Service.
+cmd add core let %discord_message% = \"**```Mythic Core SC | Loaded Join & Leave Messages system Service.```**\"
+cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add core message onlineplayers() Mythic Core SC | Loading Custom Kill Messages system Service.
+cmd add core let %discord_message% = \"**```Mythic Core SC | Loading Custom Kill Messages system Service.```**\"
+cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add core ascon /cmd run customkill
+cmd add core message onlineplayers() Mythic Core SC | Loaded Custom Kill Messages system service.
+cmd add core let %discord_message% = \"**```Mythic Core SC | Loaded Custom Kill Messages system Service.```**\"
+cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add core message onlineplayers() Mythic Core SC | Loading Custom HUDSync system Service.
+cmd add core let %discord_message% = \"**```Mythic Core SC | Loading Custom HUDSync system Service.```**\"
+cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add core ascon /cmd run chud
+cmd add core message onlineplayers() Mythic Core SC | Loaded Custom HUDSync system service.
+cmd add core let %discord_message% = \"**```Mythic Core SC | Loaded Custom HUDSync system Service.```**\"
+cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add core message onlineplayers() Mythic Core SC | Loading MOTDSync system Service.
+cmd add core let %discord_message% = \"**```Mythic Core SC | Loading MOTDSync system Service.```**\"
+cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add core ascon /cmd run motdmngr
+cmd add core message onlineplayers() Mythic Core SC | Loaded MOTDSync system service.
+cmd add core let %discord_message% = \"**```Mythic Core SC | Loaded MOTDSync system Service.```**\"
+cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add core message onlineplayers() Mythic Core SC | Loading MYTHICNETWORKSync system Service.
+cmd add core let %discord_message% = \"**```Mythic Core SC | Loading MYTHICNETWORKSync system Service.```**\"
+cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add core ascon /cmd run nwsync
+cmd add core message onlineplayers() Mythic Core SC | Loaded MYTHICNETWORKSync system service.
+cmd add core let %discord_message% = \"**```Mythic Core SC | Loaded MYTHICNETWORKSync system Service.```**\"
+cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add core %total-time% = %time% - %current-time%
+cmd add core message onlineplayers() SC | The Mythic Core took %total-time% seconds to load all services and systems.
+cmd add core let %discord_message% = \"**```SC | The Mythic Core took \" + %total-time% + \" seconds to load all services and systems.```**\"
+cmd add core let %done% = geturl(\"http://cdn.skysprojects.me/leet/l2d/send.php?channel=674937611738939392&token=fOclDKQlBkk6DB9VoqKWbCLOI0tgik91xv2fnQB6Atj5VNAUqVDjTzN1PSDqnItFjLa-&message=\" + urlencode(%discord_message%))
+cmd add core exit

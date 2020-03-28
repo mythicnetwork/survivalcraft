@@ -1,0 +1,237 @@
+MUTE SYSTEM
+/cmd create mute usage: on\off
+/cmd insert mute 0 #Mute by BlackDeadSkulll MadCommands v.0.0.1
+/cmd add mute let %optie% = %args%[1]
+/cmd add mute let %player% = %args%[2]
+/cmd add mute if varset(%optie%) then goto 7
+/cmd add mute message %p% usage: /mute on\off <playername>
+/cmd add mute exit
+/cmd add mute if varset(%playar%) then goto 10
+/cmd add mute goto 5
+/cmd add mute exit
+/cmd add mute let %on% = onlineplayers()
+/cmd add mute if %player% notin %online% then message %p% §cPlayer needs to be online!
+/cmd add mute if %player% notin %online% then exit
+/cmd add mute load %mute%
+/cmd add mute if \"on\" = %optie% then goto 100
+/cmd add mute if \"off\" = %optie% then goto 50
+/cmd add mute message %p% %optie% is not a command! Try on\off
+/cmd add mute exit
+/cmd insert mute 49 #on
+/cmd add mute if \"on\" in %mute%[%player%] then message %p% This Player is already muted!
+/cmd add mute if \"on\" in %mute%[%player%] then exit
+/cmd add mute %mute%[%player%] = \"on\"
+/cmd add mute save %mute%
+/cmd add mute message %p% The player %player% has been muted!
+/cmd add mute exit
+/cmd insert mute 99 #off
+/cmd add mute if \"off\" in %mute%[%player%] then message %p% This Player not muted
+
+/cmd add mute if \"off\" in %mute%[%player%] then exit
+/cmd add mute %mute%[%player%] = \"off\"
+/cmd add mute save %mute%
+/cmd add mute message %p% The player %player% has been unmuted!
+/cmd add mute exit
+
+This will disallow to not talk\talk in chat!
+/cmd create chat #chatter
+/cmd add chat load %mute%
+/cmd add chat let %chat% = %args%[3]
+/cmd add chat let %lol% = %mute%[%p%]
+/cmd add chat if %lol% = \"on\" then goto 8
+/cmd add chat if %lol% = \"off\" then exit
+/cmd add chat exit
+/cmd add chat cancel
+/cmd add chat message %p% You have been unmuted!
+/cmd unregister char
+/cmd trigger chat chat
+======================================================================================
+PLAYER INFO
+
+cmd create info Player information
+cmd add info if varset(%args%[1]) then goto 21
+cmd add info %status% = playerstatus(%p%)
+cmd add info %xx% = %status%["x"]
+cmd add info %yy% = %status%["y"]
+cmd add info %zz% = %status%["z"]
+cmd add info %world% = %status%["level"]
+cmd add info %gamemode% = %status%["gm"]
+cmd add info %lives% = %status%["health"]
+cmd add info %group% = playergroup(%p%)
+cmd add info message %p% §8[§5INFO§8] §aHere is your information:
+cmd add info sleep 0
+cmd add info message %p% §ex: §a%xx%
+cmd add info message %p% §ey: §a%yy%
+cmd add info message %p% §ez: §a%zz%
+cmd add info message %p% §b(%xx%, %yy%, %zz%)
+cmd add info message %p% §aYou are currently in the §b%world% §aworld
+cmd add info message %p% §aYour health: §c%lives%/20
+cmd add info message %p% §aYour gamemode: §2%gamemode%
+cmd add info message %p% §aYour group is: §9%group%
+cmd add info exit
+cmd add info %allowed% = array(<staff ranks you want to have access to check another player's information>)
+cmd add info if playergroup(%p%) in %allowed% then goto 25
+cmd add info message %p% §6You must be Staff to check another player's information
+cmd add info exit
+cmd add info %player% = %args%[1]
+cmd add info if %args%[1] in onlineplayers() then goto 29
+cmd add info message %p% §c%player% is not online
+cmd add info exit
+cmd add info %status% = playerstatus(%player%)
+cmd add info %player% = %args%[1]
+cmd add info %status% = playerstatus(%player%)
+cmd add info %xx% = %status%["x"]
+cmd add info %yy% = %status%["y"]
+cmd add info %zz% = %status%["z"]
+cmd add info %world% = %status%["level"]
+cmd add info %gamemode% = %status%["gm"]
+cmd add info %lives% = %status%["health"]
+cmd add info %op% = %status%["op"]
+cmd add info %group% = playergroup(%player%)
+cmd add info message %p% §8[§5INFO§8] §aHere is %player%'s information:
+cmd add info sleep 0
+cmd add info message %p% §ex: §a%xx%
+cmd add info message %p% §ey: §a%yy%
+cmd add info message %p% §ez: §a%zz%
+cmd add info message %p% §b(%xx%, %yy%, %zz%)
+cmd add info message %p% §a%player% is currently in the §b%world% §aworld
+cmd add info message %p% §a%player%'s health: §c%lives%/20
+cmd add info message %p% §a%player%'s gamemode: §2%gamemode%
+cmd add info if %op% then goto 52
+cmd add info message %p% §a%player% is not op
+cmd add info goto 53
+cmd add info message %p% §a%player% is op
+cmd add info message %p% §a%player%'s group is: §9%group%
+cmd add info exit
+==============================================================================================
+ANTI SPAM SYSTEM
+md create antispam Prevents spam
+cmd add antispam load %chat%
+cmd add antispam if varset(%chat%[%p%]) = %false% then goto 4
+cmd add antispam if (%args%[3] = %chat%[%p%]) or (%args%[3] in %chat%[%p%]) then goto 7
+cmd add antispam let %chat%[%p%] = %args%[3]
+cmd add antispam save %chat%
+cmd add antispam exit
+cmd add antispam cancel
+cmd add antispam message %p% [Anti-Spam] Don’t try to spam.
+cmd add antispam exit
+cmd trigger chat antispam
+=======================================================================================
+DEMOTE SYSTEM
+/cmd create demote §fFire Abusive Staff (§eHeads Of Staff Only)!
+load %hstaff% 
+let %hstaff% = array(\"HeadAdmin\",\"HeadBuilder\",\"Owner\",\"HeadDev\")
+%gr% = playergroup(%p%)
+if %gr% notin %hstaff% then message %p% §4You Do Not Have Permission To Use This Command!
+save %hstaff%
+if varset(%args%[2]) = %false% then message %p% §4Usage §e/demote [player] [reason]
+if varset(%args%[2]) = %false% then exit
+load %play%
+let %play% = %p%
+let %play% = %args%[1]
+save %play%
+load %reason%
+let %reason% = join(%args%[2+], \" \")
+/setgroup %play% Guest
+message onlineplayers() §4%play% §eHas Been Demoted For §4%reason%!
+==========================================================================================
+STAFF CHAT 2.0
+cmd create staffchat 
+
+cmd add staffchat if varset(%args%[1]) = 0 then goto 6 
+
+cmd add staffchat let %toggle% = lowercase(%args%[1]) 
+
+cmd add staffchat if %toggle% = \"chat\" then goto 34 
+
+cmd add staffchat if %toggle% = \"on\" then goto 8 
+
+cmd add staffchat if %toggle% = \"off\" then goto 21 
+
+cmd add staffchat message %p% §2Usage: §a/sc on/off
+
+cmd add staffchat exit 
+
+cmd add staffchat #enable 
+
+cmd add staffchat let %status% = playerstatus(%p%) 
+
+cmd add staffchat if %status%[\"op\"] = 0 then message %p% §cYou have no permission to use this command! 
+
+cmd add staffchat if %status%[\"op\"] = 0 then exit 
+
+cmd add staffchat load %staff% 
+
+cmd add staffchat if %p% in %staff% then goto 19 
+
+cmd add staffchat let %staff%[] = %p% 
+
+cmd add staffchat save %staff% 
+
+cmd add staffchat load %chattoggle% 
+
+cmd add staffchat let %chattoggle%[%p%] = 1 
+
+cmd add staffchat save %chattoggle% 
+
+cmd add staffchat message %p% §6[§3S§bN§6] §6[§3StaffChat§6] §sEnabled, please do /sc off to disable staffchat.
+
+cmd add staffchat exit 
+
+cmd add staffchat #disable 
+
+cmd add staffchat let %status% = playerstatus(%p%) 
+
+cmd add staffchat if %status%[\"op\"] = 0 then message %p% §cYou have no permission to use this command! 
+
+cmd add staffchat if %status%[\"op\"] = 0 then exit 
+
+cmd add staffchat load %staff% 
+
+cmd add staffchat if %p% notin %staff% then goto 28 
+
+cmd add staffchat let %staff% = %staff% - %p% 
+
+cmd add staffchat save %staff% 
+
+cmd add staffchat load %chattoggle% 
+
+cmd add staffchat let %chattoggle%[%p%] = 0 
+
+cmd add staffchat save %chattoggle% 
+
+cmd add staffchat message %p% [StaffChat] disabled 
+
+cmd add staffchat exit 
+
+cmd add staffchat #chat 
+
+cmd add staffchat load %staff% 
+
+cmd add staffchat load %chattoggle% 
+
+cmd add staffchat if %chattoggle%[%p%] = 0 then exit 
+
+cmd add staffchat if %chattoggle%[%p%] = 1 then cancel 
+
+cmd add staffchat let %msg% = %args%[3] 
+
+cmd add staffchat message %staff% §6[§3S§bN§6] §6[§3StaffChat§6] §b%p% §6-=> §3%msg% 
+
+cmd trigger chat staffchat
+====================================================================================
+CLEAR CHAT
+cmd create cchat
+
+cmd add cchat let %cchat% = 100 
+
+cmd add cchat message onlineplayers() 
+
+cmd add cchat let %cchat% = %cchat% - 1 
+
+cmd add cchat if %cchat% > -1 then goto 2 
+
+cmd add cchat message onlineplayers() Chat has been cleared. 
+
+cmd add cchat exit
+=================================================================================

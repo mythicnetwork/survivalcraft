@@ -1,0 +1,11 @@
+cmd create changelogs §r§6§l» §r§dCheck whats added in the latest patch. 
+cmd add changelogs %player% = %p%
+cmd add changelogs %gui%[\"type\"] = \"form\"
+cmd add changelogs %gui%[\"title\"] = \"§6What's new in » §4§lv0.1.0!\"
+cmd add changelogs %gui%[\"content\"] = \"§6§l» What's new\\n§r\\n§6§l»§r §dWe are back with currently §6§lSkyblock§r§d, §6§lFactions§r§d and §6§lSkygrid §r§cALPHA §din the Classics! We will be working on the remaining features aswell!\"
+cmd add changelogs %button0%[\"text\"] = \"§4§l» Exit\"
+cmd add changelogs %buttons%[] = %button0%
+cmd add changelogs %gui%[\"buttons\"] = %buttons%
+cmd add changelogs %response% = dialog(%player%, %gui%)
+cmd add changelogs if %response% = 0 then exit
+cmd add changelogs exit

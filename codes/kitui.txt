@@ -1,0 +1,68 @@
+cmd create kits §r§6§l» §r§dSelect a kit to fight and survive against the other players!
+cmd add kits %player% = %p%
+cmd add kits %gui%[\"type\"] = \"form\"
+cmd add kits %gui%[\"title\"] = \"§6§lKits\"
+cmd add kits %gui%[\"content\"] = \"§6Choose a kit to wear in fight!\"
+cmd add kits %button0%[\"text\"] = \"§6§l» §r§6Member\"
+cmd add kits %button1%[\"text\"] = \"§6§l» §r§eVoter\"
+cmd add kits %button2%[\"text\"] = \"§d§l» §cElite §d- SOON\"
+cmd add kits %button3%[\"text\"] = \"§d§l» §6Legend §d- SOON\"
+cmd add kits %button4%[\"text\"] = \"§d§l» §4Ruby §d- SOON\"
+cmd add kits %button5%[\"text\"] = \"§4§l» §r§6Exit\"
+cmd add kits %buttons%[] = %button0%
+cmd add kits %buttons%[] = %button1%
+cmd add kits %buttons%[] = %button2%
+cmd add kits %buttons%[] = %button3%
+cmd add kits %buttons%[] = %button4%
+cmd add kits %buttons%[] = %button5%
+cmd add kits %gui%[\"buttons\"] = %buttons%
+cmd add kits %response% = dialog(%player%, %gui%)
+cmd add kits if %response% = 0 then goto 26
+cmd add kits if %response% = 1 then goto 33
+cmd add kits if %response% = 2 then message %p% §b§lS§cC §6»§r §c§lElite §r§dkit is currently disabled.
+cmd add kits if %response% = 3 then message %p% §b§lS§cC §6»§r §6§lLegend §r§dkit is currently disabled.
+cmd add kits if %response% = 4 then message %p% §b§lS§cC §6»§r §4§lRuby §r§dkit is currently disabled.
+cmd add kits if %response% = 5 then exit
+cmd add kits exit
+cmd add kits #MemberKit
+cmd add kits ascon /give %p% 267 1
+cmd add kits ascon /give %p% steak 64
+cmd add kits ascon /give %p% iron_pickaxe 1
+cmd add kits ascon /give %p% iron_axe 1
+cmd add kits message %p% §b§lS§cC §6» §r§dYou have choosed the §l§6Member§r §dkit!
+cmd add kits exit
+cmd add kits #VoterKit
+cmd add kits let %kit2% = array(\"Voter\", \"YT\", \"Creator\", \"Emperor\", \"Warrior\", \"God\", \"Owner\", \"Admin\", \"Mod\", \"Helper\")
+cmd add kits let %pgrp% = playergroup(%p%)
+cmd add kits if %pgrp% in %kit2% then goto 39
+cmd add kits message %p% §b§lS§cC §6» §r§dYou don't have permission to use this kit.
+cmd add kits exit
+cmd add kits ascon /give %p% 310 1
+cmd add kits ascon /give %p% 311 1
+cmd add kits ascon /give %p% 308 1
+cmd add kits ascon /give %p% 309 1
+cmd add kits ascon /give %p% 267 1
+cmd add kits ascon /give %p% steak 64
+cmd add kits ascon /give %p% diamond_pickaxe
+cmd add kits ascon /give %p% diamond_axe
+cmd add kits ascon /give %p% ender_pearl 2
+cmd add kits message %p% §b§lS§cC §6» §r§dYou have choosed the §e§lVoter§r §dkit!
+cmd add kits exit
+cmd add kits #WarriorKit
+cmd add kits let %kit3% = array(\"Warrior\", \"Creator\", \"Emperor\", \"YT\", \"Owner\", \"Admin\", \"Mod\", \"Helper\")
+cmd add kits let %pgrp% = playergroup(%p%)
+cmd add kits if %pgrp% in %kit3% then goto 69
+cmd add kits message %p% §d§lMythic §cNetwork §6» §r§6You don't have permission to use this kit.
+cmd add kits exit
+cmd add kits asop /kitgive warriorkit %p%
+cmd add kits message %p% §d§lMythic §cNetwork §6» §r§dYou have choosed the §c§lWarrior§r §dkit!
+cmd add kits exit
+cmd add kits #EmperorKit
+cmd add kits let %kit4% = array(\"YT\", \"Creator\", \"Emperor\", \"Owner\", \"Admin\", \"Mod\", \"Helper\", \"God\")
+cmd add kits let %pgrp% = playergroup(%p%)
+cmd add kits if %pgrp% in %kit4% then goto 78
+cmd add kits message %p% §d§lMythic §cNetwork §6» §r§dYou don't have permission to use this kit.
+cmd add kits exit
+cmd add kits asop /kitgive emperorkit %p%
+cmd add kits message %p% §d§lMythic §cNetwork §6» §r§dYou have choosed the §6§lEmperor§r §dkit!
+cmd add kits exit
