@@ -2,7 +2,7 @@ cmd create feedback §r§6§l» §r§dGive us feedback on what we can improve!
 cmd edit feedback 1 %all% = onlineplayers()
 cmd edit feedback 2 %player% = %p% 
 cmd edit feedback 3 %form%[\"type\"] = \"custom_form\"
-cmd edit feedback 4 %form%[\"title\"] = \"§6§lFactions » §r§dFeedback\"
+cmd edit feedback 4 %form%[\"title\"] = \"§b§lS§cC » §r§dFeedback\"
 cmd edit feedback 5 %i1%[\"type\"] = \"input\"
 cmd edit feedback 6 %i1%[\"text\"] = \"\\n§6§l» §r§dGive us feedback on a feature that you suggest a edit/change or want a feature added. §c§lWARNING! False feedback or just giving random messages will result to a warning. We track feedback actively.\"
 cmd edit feedback 7 %i1%[\"placeholder\"] = \"§6§l» §r§dType your feedback here...\"
